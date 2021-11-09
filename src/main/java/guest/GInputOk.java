@@ -10,16 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/GInputOk")
-public class GInputOk extends HttpServlet{
+public class GInputOk extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		
-		String name = request.getParameter("name") == null ? "" : request.getParameter("name");
-		String email = request.getParameter("email") == null ? "" : request.getParameter("email");
-		String homepage = request.getParameter("homepage") == null ? "" : request.getParameter("homepage");
-		String content = request.getParameter("content") == null ? "" : request.getParameter("content");
+		String name = request.getParameter("name")==null? "": request.getParameter("name");
+		String email = request.getParameter("email")==null? "": request.getParameter("email");
+		String homepage = request.getParameter("homepage")==null? "": request.getParameter("homepage");
+		String content = request.getParameter("content")==null? "": request.getParameter("content");
+		
+		name = name.replace("<", "&lt;");
+		name = name.replace(">", "&gt;");
 		
 		GuestVO vo = new GuestVO();
 		
@@ -37,13 +40,14 @@ public class GInputOk extends HttpServlet{
 		
 		if(res) {
 			out.println("<script>");
-			out.println("alert('방문소감 등록 완료!');");
-			out.println("location.href='" + request.getContextPath() + "/guest/gList.jsp';");
+			out.println("alert('방문소감 등록완료!!!');");
+			out.println("location.href='"+request.getContextPath()+"/guest/gList.jsp';");
 			out.println("</script>");
-		} else {
+		}
+		else {
 			out.println("<script>");
-			out.println("alert('방문소감 등록 실패....');");
-			out.println("location.href='" + request.getContextPath() + "/guest/gInput.jsp';");
+			out.println("alert('방문소감 등록실패~~~ㅜㅜ~~~');");
+			out.println("location.href='"+request.getContextPath()+"/guest/gInput.jsp';");
 			out.println("</script>");
 		}
 	}

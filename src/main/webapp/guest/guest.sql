@@ -16,3 +16,5 @@ insert into guest values (default, '관리자', 'qgt0310@naver.com', 'http://www
 insert into guest values (default, '홍길동', 'hkd1234@naver.com', '', default, '192.168.0.10', '잠시 방문해 봅니다.');
 
 select * from guest;
+
+select count(*) from guest;
