@@ -128,6 +128,25 @@ public class UserDAO {
 		return vo;
 	}
 	
+	// 정보 수정하기
+	public int setUserUpdateOk(UserVO vo) {
+		int res = 0;
+		try {
+			sql = "update user set name=?, age=? where idx = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setInt(2, vo.getAge());
+			pstmt.setInt(3, vo.getIdx());
+			pstmt.executeUpdate();
+			res = 1;
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 :: " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
+		return res;
+	}
+	
 	
 	
 	

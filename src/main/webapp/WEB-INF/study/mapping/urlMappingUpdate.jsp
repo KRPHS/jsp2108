@@ -18,7 +18,7 @@
   <p><br></p>
   <div class="container">
 		<h2>사용자 정보 수정창</h2>
-		<form name="myform" method="post" action="<%=request.getContextPath()%>/urlMappingInputOk.um">
+		<form name="myform" method="post" action="<%=request.getContextPath()%>/urlMappingUpdateOk.um">
 			<table class="table table-bordered">
 				<tr>
 					<td>
@@ -33,6 +33,7 @@
 					</td>
 				</tr>
 			</table>
+			<input type="hidden" name="idx" value="<%=vo.getIdx() %>">
 		</form>
   </div>
   <br>

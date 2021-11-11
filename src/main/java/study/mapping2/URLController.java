@@ -35,6 +35,10 @@ public class URLController extends HttpServlet{
 			command = new URLMappingUpdateCommand();
 			command.execute(request, response);
 			viewPage = "\\WEB-INF\\study\\mapping\\urlMappingUpdate.jsp";
+		} else if (com.equals("/urlMappingUpdateOk")) {
+			command = new URLMappingUpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "\\WEB-INF\\study\\mapping\\message.jsp";
 		} else if (com.equals("/urlMappingInput")) {
 			viewPage = "\\WEB-INF\\study\\mapping\\urlMappingInput.jsp";
 		}
