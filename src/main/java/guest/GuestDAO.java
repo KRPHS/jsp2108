@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuestDAO {
-	private Connection conn;
-	private PreparedStatement pstmt;
-	private ResultSet rs;
+	private Connection conn = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 	
 	private String sql = "";
 	
@@ -21,19 +21,17 @@ public class GuestDAO {
 	private String user = "root";
 	private String password = "1234";
 	
-	// 객체 생성시 DB연동
+	// 객체 생성시 DB연동하기
 	public GuestDAO() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버 검색 실패");
+			System.out.println("드라이버 검색실패~~");
 		} catch (SQLException e) {
-			System.out.println("DB 연동 실패");
-			e.printStackTrace();
+			System.out.println("데이터베이스 연동실패~~~");
 		}
 	}
-	
 	
 	// 객체 소멸시키기
 	public void pstmtClose() {
@@ -57,7 +55,7 @@ public class GuestDAO {
 	public List<GuestVO> gList(int startIndexNo, int pageSize) {
 		List<GuestVO> vos = new ArrayList<GuestVO>();
 		try {
-			sql = "select * from guest order by idx desc limit ?, ?";
+			sql = "select * from guest order by idx desc limit ?,?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, startIndexNo);
 			pstmt.setInt(2, pageSize);
@@ -80,14 +78,15 @@ public class GuestDAO {
 		} finally {
 			rsClose();
 		}
+		
 		return vos;
 	}
 
-	// 방명록에 내용 등록하기 (방문소감 등록하기)
+	// 방명록에 방문소감 등록하기
 	public boolean gInputOk(GuestVO vo) {
 		boolean res = false;
 		try {
-			sql = "insert into guest values (default, ?, ?, ?, default, ?, ?)";
+			sql = "insert into guest values (default,?,?,?,default,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getName());
 			pstmt.setString(2, vo.getEmail());
@@ -121,23 +120,21 @@ public class GuestDAO {
 		return res;
 	}
 	
+	// 전체 레코드 건수
 	public int totRecCnt() {
-			int totRecCnt = 0;
-			try {
-//				sql = "select count(*) as cnt from guest";
-				sql = "select count(*) from guest";
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
-				
-//				if(rs.next()) totRecCnt = rs.getInt("cnt");
-				if(rs.next()) totRecCnt = rs.getInt(1);
-
-			} catch (SQLException e) {
-				System.out.println("SQL 오류 : " + e.getMessage());
-			} finally {
-				rsClose();
-			}
-			return totRecCnt;
+		int totRecCnt = 0;
+		try {
+			// sql = "select count(*) as cnt from guest";
+			sql = "select count(*) from guest";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) totRecCnt = rs.getInt(1);
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return totRecCnt;
 	}
-	
 }

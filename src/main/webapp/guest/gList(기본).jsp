@@ -7,7 +7,7 @@
   String mid = session.getAttribute("sAdmin")==null?"":(String)session.getAttribute("sAdmin");
 
   GuestDAO dao = new GuestDAO();
-  List<GuestVO> vos = dao.gList();
+  List<GuestVO> vos = dao.gList(0, 10); // 0, 10은 에러땜에 일시적으로 넣은 값
   GuestVO vo = new GuestVO();
   
   int no = vos.size(); // 총 건수

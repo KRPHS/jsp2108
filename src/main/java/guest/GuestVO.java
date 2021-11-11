@@ -9,11 +9,6 @@ public class GuestVO {
 	private String hostIp;
 	private String content;
 	
-	@Override
-	public String toString() {
-		return "GuestVO [idx=" + idx + ", name=" + name + ", email=" + email + ", homepage=" + homepage + ", vDate=" + vDate
-				+ ", hostIp=" + hostIp + ", content=" + content + "]";
-	}
 	public int getIdx() {
 		return idx;
 	}
@@ -56,5 +51,9 @@ public class GuestVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+	@Override
+	public String toString() {
+		return "GuestVO [idx=" + idx + ", name=" + name + ", email=" + email + ", homepage=" + homepage + ", vDate=" + vDate
+				+ ", hostIp=" + hostIp + ", content=" + content + "]";
+	}
 }
