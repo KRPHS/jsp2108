@@ -32,7 +32,7 @@ public class MemberController extends HttpServlet{
 		} else if(com.equals("/memJoinOk")) {
 			command = new MemJoinOkCommand();
 			command.execute(request, response);
-			viewPage += "/memJoinOk.jsp";
+			viewPage = "/WEB-INF/message/message.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
