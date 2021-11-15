@@ -72,7 +72,7 @@ public class MemberDAO {
 	public int setMemberJoinOk(MemberVO vo) {
 		int res = 0;
 		try {
-			sql = "insert into member values(default,?,?,?,?,?,?,?,?,?,?,?,?,?,default,?,?,default,default,default,default,default,default)";
+			sql = "insert into member values(default,?,?,?,?,?,?,?,?,?,?,?,?,?,default,?,?,default,default,default,default,default,default,default)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getPwd());
@@ -113,6 +113,9 @@ public class MemberDAO {
 				vo.setPwdKey(rs.getInt("pwdKey"));
 				vo.setNickName(rs.getString("nickName"));
 				vo.setLevel(rs.getInt("level"));
+				vo.setPoint(rs.getInt("point"));
+				vo.setLastDate(rs.getString("lastDate"));
+				vo.setVisitCnt(rs.getInt("visitCnt"));
 			} else vo = null;
 			
 		} catch (SQLException e) {
@@ -121,6 +124,19 @@ public class MemberDAO {
 			getConn.pstmtClose();
 		}
 		return vo;
+	}
+
+	public void setLastDateUpdate(String mid) {
+		try {
+			sql = "update member set lastDate = now(), point = point +10, visitCnt = visitCnt +1 where mid = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			getConn.pstmtClose();
+		}
 	}
 	
 }

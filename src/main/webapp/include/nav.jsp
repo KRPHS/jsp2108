@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	int level = session.getAttribute("sLevel")==null?99:(int)session.getAttribute("sLevel");
+%>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
   <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -25,14 +28,15 @@
 		    </div>
       </li>
       <li class="nav-item">
+<%			if(level != 99) {%>
       	<a class="nav-link" href="<%=request.getContextPath()%>/memLogin.mem">Login</a>
+<%			} else { %>
+      	<a class="nav-link" href="<%=request.getContextPath()%>/memLogOut.mem">LogOut</a>
+<%			} %>
       </li>
-<<<<<<< HEAD
       <li class="nav-item">
       	<a class="nav-link" href="<%=request.getContextPath()%>/memJoin.mem">Join</a>
       </li>
-=======
->>>>>>> refs/remotes/origin/refs/heads/master
     </ul>
   </div>  
 </nav>

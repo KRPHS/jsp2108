@@ -96,10 +96,10 @@ public class MemJoinOkCommand implements MemberInterface {
 		int res = dao.setMemberJoinOk(vo);
 		
 		if(res == 1) {		// 사용 가능한 아이디 중복검색을 통해서 검색이 안될때
-			request.setAttribute("msg", "memJoinOk");
+			request.setAttribute("msg", "memberJoinOk");
 			request.setAttribute("url", request.getContextPath()+"/memLogin.mem");
 		} else {
-			request.setAttribute("msg", "memJoinNo");
+			request.setAttribute("msg", "memberJoinNo");
 			request.setAttribute("url", request.getContextPath()+"/memJoin.mem");
 		}
 		
