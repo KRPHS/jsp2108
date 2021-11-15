@@ -10,7 +10,6 @@ public class MemJoinOkCommand implements MemberInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
 		String mid = request.getParameter("mid")==null?"":request.getParameter("mid").trim();
 		String pwd = request.getParameter("pwd")==null?"":request.getParameter("pwd").trim();
 		String nickName = request.getParameter("nickName")==null?"":request.getParameter("nickName").trim();
@@ -92,7 +91,7 @@ public class MemJoinOkCommand implements MemberInterface {
 		vo.setHobby(hobby);
 		// 이미지처리
 		vo.setContent(content);
-		vo.setUserInfo(userInfor);
+		vo.setUserInfor(userInfor);
 		
 		int res = dao.setMemberJoinOk(vo);
 		
@@ -103,8 +102,6 @@ public class MemJoinOkCommand implements MemberInterface {
 			request.setAttribute("msg", "memJoinNo");
 			request.setAttribute("url", request.getContextPath()+"/memJoin.mem");
 		}
-=======
->>>>>>> refs/remotes/origin/refs/heads/master
 		
 	}
 

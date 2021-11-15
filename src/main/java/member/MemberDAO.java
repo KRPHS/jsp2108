@@ -49,7 +49,6 @@ public class MemberDAO {
 		}
 		return name;
 	}
-<<<<<<< HEAD
 
 	// 해시테이블에서 pwdKey에 해당하는 pwdValue을 찾아서 리턴
 	public long getHashTableSearch(int pwdKey) {
@@ -89,7 +88,7 @@ public class MemberDAO {
 			pstmt.setString(12, vo.getJob());
 			pstmt.setString(13, vo.getHobby());
 			pstmt.setString(14, vo.getContent());
-			pstmt.setString(15, vo.getUserInfo());
+			pstmt.setString(15, vo.getUserInfor());
 			pstmt.executeUpdate();
 			res = 1;
 		} catch (SQLException e) {
@@ -123,7 +122,5 @@ public class MemberDAO {
 		}
 		return vo;
 	}
-=======
->>>>>>> refs/remotes/origin/refs/heads/master
 	
 }
