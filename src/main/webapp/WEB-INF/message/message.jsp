@@ -12,7 +12,7 @@
   <script>
   	var msg = "<%=msg%>";
   	var url = "<%=url%>";
-  	if(msg == "memberDeleteOk")			msg = "회원 정보가 삭제되었습니다";
+  	if(msg == "memberDeleteOk")			msg = "회원 정보가 삭제되었습니다.";
   	else if(msg == 'memberDeleteNo')	msg = "회원 정보가 삭제되지 않았습니다.";
   	else if(msg == 'memberJoinOk')	msg = "회원 정보가 입력되었습니다.";
   	else if(msg == 'memberJoinNo')	msg = "회원 정보가 입력되지 않았습니다.";
