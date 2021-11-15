@@ -46,7 +46,11 @@ public class GetConn {
 		}
 	}
 
+<<<<<<< HEAD
 	public void pstmtClose() {
+=======
+	private void pstmtClose() {
+>>>>>>> refs/remotes/origin/refs/heads/master
 		if(pstmt != null) {
 			try {
 				pstmt.close();

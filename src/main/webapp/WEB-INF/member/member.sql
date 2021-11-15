@@ -28,6 +28,7 @@ create table member (
 );
 
 desc member;
+<<<<<<< HEAD
 select * from member;
 update member set level = 0 where mid = 'admin';
 insert into member values (default, 'admin', '1234', 1, '관리맨','관리자',default,default,'010-2258-2558','경기도 안성시','qgt0310@naver.com','http://blog.daum.net/cjsk1126','학생','등산/바둑',default,'관리자입니다.',default,default,default,default,default,default,default);
@@ -61,3 +62,6 @@ insert into hashTable values (16,'21212121');
 insert into hashTable values (17,'32323232');
 insert into hashTable values (18,'43434343');
 insert into hashTable values (19,'54545454');
+=======
+insert into member values (default, 'admin', '1234', 1, '관리맨','관리자',default,default,'010-2258-2558','경기도 안성시','qgt0310@naver.com','http://blog.daum.net/cjsk1126','학생','등산/바둑',default,'관리자입니다.',default,default,default,default,default,default,default);
+>>>>>>> refs/remotes/origin/refs/heads/master

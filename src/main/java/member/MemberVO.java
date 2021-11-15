@@ -8,6 +8,7 @@ public class MemberVO {
 	private String nickName;
 	private String name;
 	private String gender;
+<<<<<<< HEAD
 	private String birthday;
 	private String tel;
 	private String address;
@@ -76,6 +77,76 @@ public class MemberVO {
 	}
 	public void setBirthday(String brithday) {
 		this.birthday = brithday;
+=======
+	private String brithday;
+	private String tel;
+	private String address;
+	private String email;
+	private String homePage;
+	private String job;
+	private String hobby;
+	private String photo;
+	private String content;
+	private String userInfo;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "MemberVO [idx=" + idx + ", mid=" + mid + ", pwd=" + pwd + ", pwdKey=" + pwdKey + ", nickName=" + nickName
+				+ ", name=" + name + ", gender=" + gender + ", brithday=" + brithday + ", tel=" + tel + ", address=" + address
+				+ ", email=" + email + ", homePage=" + homePage + ", job=" + job + ", hobby=" + hobby + ", photo=" + photo
+				+ ", content=" + content + ", userInfo=" + userInfo + ", userDel=" + userDel + ", point=" + point + ", level="
+				+ level + ", visitCnt=" + visitCnt + ", startDate=" + startDate + ", lastDate=" + lastDate + "]";
+	}
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+	public String getMid() {
+		return mid;
+	}
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public int getPwdKey() {
+		return pwdKey;
+	}
+	public void setPwdKey(int pwdKey) {
+		this.pwdKey = pwdKey;
+	}
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getBrithday() {
+		return brithday;
+	}
+	public void setBrithday(String brithday) {
+		this.brithday = brithday;
+>>>>>>> refs/remotes/origin/refs/heads/master
 	}
 	public String getTel() {
 		return tel;

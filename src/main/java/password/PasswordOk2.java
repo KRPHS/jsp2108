@@ -39,12 +39,21 @@ public class PasswordOk2 extends HttpServlet {
 		// 암호화 작업(인코딩)
 		encPwd = intPwd ^ key;		// 원본비번과 암호키값을 배타적OR(exclusive OR)시킨다.
 		strPwd = String.valueOf(encPwd); // DB에 저장하기위해 문자로 변환했다.
+<<<<<<< HEAD
 		System.out.println("인코딩된 비밀번호(DB저장값) : " + strPwd);  // DB에 저장시킬 비밀번호
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
 		
 		// DB에 저장된 암호를 다시 복호화 시킨다.
 		long decPwd;
 		intPwd = Long.parseLong(strPwd); // DB에 넣었던 strPwd를 다시 불러서 복호화를 위해 정수형으로 변환했다.
+=======
+		System.out.println("인코딩된 비밀번호 : " + strPwd);  // DB에 저장시킬 비밀번호
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
+		
+		// DB에 저장된 암호를 다시 복호화 시킨다.
+		long decPwd;
+		intPwd = Long.parseLong(strPwd);
+>>>>>>> refs/remotes/origin/refs/heads/master
 		decPwd = intPwd ^ key;
 		System.out.println("디코딩된 비밀번호 : " + decPwd);  // 복호화 되어서 기존비밀번호와 비교한다.
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");

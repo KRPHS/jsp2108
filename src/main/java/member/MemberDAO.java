@@ -49,6 +49,7 @@ public class MemberDAO {
 		}
 		return name;
 	}
+<<<<<<< HEAD
 
 	// 해시테이블에서 pwdKey에 해당하는 pwdValue을 찾아서 리턴
 	public long getHashTableSearch(int pwdKey) {
@@ -122,5 +123,7 @@ public class MemberDAO {
 		}
 		return vo;
 	}
+=======
+>>>>>>> refs/remotes/origin/refs/heads/master
 	
 }

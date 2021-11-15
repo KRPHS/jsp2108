@@ -27,9 +27,12 @@
       <li class="nav-item">
       	<a class="nav-link" href="<%=request.getContextPath()%>/memLogin.mem">Login</a>
       </li>
+<<<<<<< HEAD
       <li class="nav-item">
       	<a class="nav-link" href="<%=request.getContextPath()%>/memJoin.mem">Join</a>
       </li>
+=======
+>>>>>>> refs/remotes/origin/refs/heads/master
     </ul>
   </div>  
 </nav>

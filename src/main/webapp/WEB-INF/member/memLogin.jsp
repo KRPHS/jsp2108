@@ -38,8 +38,13 @@
 		  <button type="submit" class="btn btn-primary">인증하기</button>&nbsp;
 		  <button type="reset" class="btn btn-primary">취소</button>&nbsp;
 		  <button type="button" onclick="location.href='<%=request.getContextPath() %>/';" class="btn btn-primary">돌아가기</button>&nbsp;
+<<<<<<< HEAD
 		  <button type="button" onclick="location.href='<%=request.getContextPath() %>/memJoin.mem';" class="btn btn-primary">회원가입</button><br>
 		  [<a href="#">아이디 찾기</a>] / [<a href="#">비밀번호 찾기</a>]
+=======
+		  <button type="button" onclick="location.href='<%=request.getContextPath() %>/memJoin.mem';" class="btn btn-primary">회원가입</button>
+		  <!-- <button type="button" class="btn btn-primary">아이디/비밀번호 찾기</button> -->
+>>>>>>> refs/remotes/origin/refs/heads/master
 		</form>
   </div>
   <br>
