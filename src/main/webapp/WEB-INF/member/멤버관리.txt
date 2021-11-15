@@ -1,0 +1,28 @@
+* 회원가입
+작업폴더/패키지 명 : member
+
+DB
+ ㄴ 데이터베이스 : javacourse
+ ㄴ 테이블명/설계 : member.sql
+     ㄴ 고유번호 : idx / int / not null / auto_increment / primary key
+     ㄴ 아이디 : mid / varchar(20) / not null
+     ㄴ 비밀번호 : pwd / varchar(50) / not null
+     ㄴ 비번해시키 : pwdKey / int / not null
+     ㄴ 별명 : nickName / varchar(20) / not null
+     ㄴ 
+     ㄴ 
+     
+
+JAVA(class)로직
+ ㄴ vo : MemberVO.java
+ ㄴ dao : MemverDAO.java
+ ㄴ Controller(*.mem)
+     ㄴ MemController.java
+
+View
+ ㄴ 로그인 : memLogin.jsp
+ ㄴ 회원가입 : memJoin.jsp
+ ㄴ 로그인후 메인화면 : memMain.jsp
+ ㄴ 회원관리 :
+     ㄴ 회원정보수정 : memUpdate.jsp
+     ㄴ 탈퇴 : memDelete.jsp
